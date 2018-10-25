@@ -11,7 +11,7 @@ async def on_message(message):
 
 @client.event
 async def on_member_join(member):
-    await client.send_message(discord.Object(id='504650972761554984'), 'Welcome **@' + str(member) + '** to the **Augustyns Graphics Server**! :sparkles:')
+    await client.send_message(discord.Object(id='504650972761554984'), 'Welcome **' + member.mention + '** to the **Augustyns Graphics Server**! :sparkles:')
     print(str(member) + ' joined')
 
 @client.event
@@ -27,4 +27,5 @@ async def on_member_unban(server, member):
 @client.event
 async def on_ready():
     print("Ready to Rumble!")
+    
 client.run(TOKEN)
