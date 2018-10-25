@@ -12,7 +12,17 @@ async def on_message(message):
 @client.event
 async def on_member_join(member):
     await client.send_message(discord.Object(id='504650972761554984'), 'Welcome **@' + str(member) + '** to the **Augustyns Graphics Server**! :sparkles:')
-    print("User Joined")
+    print(str(member) + ' joined')
+
+@client.event
+async def on_member_ban(member):
+    await client.send_message(discord.Object(id='504652672859635714'), '**' + str(member) + '** got **Banned** from the server!')
+    print(str(member) + ' got banned')
+
+@client.event
+async def on_member_unban(server, member):
+    await client.send_message(discord.Object(id='504652672859635714'), '**' + str(member) + '** got **Unbanned** from the server!')
+    print(str(member) + ' got unbanned')
 
 @client.event
 async def on_ready():
